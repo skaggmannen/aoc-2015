@@ -1,9 +1,8 @@
 [package]
-name = "aoc-2015"
+name = "day4"
 version = "0.1.0"
 edition = "2024"
 
-[workspace]
-members = ["util", "day*"]
-
 [dependencies]
+md5 = "0.8.0"
+util = { path = "../util" }

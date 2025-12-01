@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "aoc-2025"
+name = "aoc-2015"
 version = "0.1.0"
 
 [[package]]
@@ -12,6 +12,41 @@ version = "0.1.0"
 dependencies = [
  "util",
 ]
+
+[[package]]
+name = "day2"
+version = "0.1.0"
+dependencies = [
+ "util",
+]
+
+[[package]]
+name = "day3"
+version = "0.1.0"
+dependencies = [
+ "util",
+]
+
+[[package]]
+name = "day4"
+version = "0.1.0"
+dependencies = [
+ "md5",
+ "util",
+]
+
+[[package]]
+name = "dayXX"
+version = "0.1.0"
+dependencies = [
+ "util",
+]
+
+[[package]]
+name = "md5"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ae960838283323069879657ca3de837e9f7bbb4c7bf6ea7f1b290d5e9476d2e0"
 
 [[package]]
 name = "util"
