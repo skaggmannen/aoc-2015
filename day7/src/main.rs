@@ -116,17 +116,16 @@ mod tests {
 
     #[test]
     fn test_part1() {
-        let mut cache = HashMap::new();
         let gates = super::Gates::from_str(INPUT);
 
-        assert_eq!(gates.resolve("d", &mut cache), 72);
-        assert_eq!(gates.resolve("e", &mut cache), 507);
-        assert_eq!(gates.resolve("f", &mut cache), 492);
-        assert_eq!(gates.resolve("g", &mut cache), 114);
-        assert_eq!(gates.resolve("h", &mut cache), 65412);
-        assert_eq!(gates.resolve("i", &mut cache), 65079);
-        assert_eq!(gates.resolve("x", &mut cache), 123);
-        assert_eq!(gates.resolve("y", &mut cache), 456);
+        assert_eq!(gates.resolve("d", &mut HashMap::new()), 72);
+        assert_eq!(gates.resolve("e", &mut HashMap::new()), 507);
+        assert_eq!(gates.resolve("f", &mut HashMap::new()), 492);
+        assert_eq!(gates.resolve("g", &mut HashMap::new()), 114);
+        assert_eq!(gates.resolve("h", &mut HashMap::new()), 65412);
+        assert_eq!(gates.resolve("i", &mut HashMap::new()), 65079);
+        assert_eq!(gates.resolve("x", &mut HashMap::new()), 123);
+        assert_eq!(gates.resolve("y", &mut HashMap::new()), 456);
     }
 
     #[test]
