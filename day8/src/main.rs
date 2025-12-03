@@ -28,19 +28,20 @@ fn unescape(s: &str) -> usize {
         };
 
         match c {
-            '\\' => {
-                let c2 = chars.next().unwrap();
-
-                match c2 {
-                    'x' => {
-                        _ = chars.by_ref().take(2).collect::<String>();
-
-                        unescaped += 1;
-                    }
-                    _ => unescaped += 1,
+            '\\' => match chars.next().unwrap() {
+                // Handle hex encoded ASCII character.
+                'x' => {
+                    // Consume the hex digits.
+                    _ = chars.by_ref().take(2).collect::<String>();
+                    // Count the decoded ASCII character.
+                    unescaped += 1;
                 }
-            }
+                // Count the escaped character (probably a \, or a ")
+                _ => unescaped += 1,
+            },
+            // Discard any double quotes.
             '"' => {}
+            // Count all other characters.
             _ => unescaped += 1,
         }
     }
