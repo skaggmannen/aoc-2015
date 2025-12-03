@@ -8,11 +8,7 @@ fn main() {
 fn part1(input: &str) -> String {
     let result: usize = util::to_lines(input)
         .iter()
-        .map(|s| {
-            let unescaped = unescape(s);
-
-            s.len() - unescaped
-        })
+        .map(|s| s.len() - unescape(s))
         .sum();
 
     format!("{}", result)
@@ -52,11 +48,7 @@ fn unescape(s: &str) -> usize {
 fn part2(input: &str) -> String {
     let result: usize = util::to_lines(input)
         .iter()
-        .map(|s| {
-            let escaped = escape(s);
-
-            escaped - s.len()
-        })
+        .map(|s| escape(s) - s.len())
         .sum();
 
     format!("{}", result)
